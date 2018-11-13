@@ -23,3 +23,4 @@
 ## Refactor TODOS:
 
 - [] Refactor user association in integration test in post_spec
+- [] Add full name method for users

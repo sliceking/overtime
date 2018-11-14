@@ -18,9 +18,9 @@
 
 ## UI:
 
-- [] Bootstrap -> formatting
+- [x] Bootstrap -> formatting
 
 ## Refactor TODOS:
 
-- [] Refactor user association in integration test in post_spec
+- [x] Refactor user association in integration test in post_spec
 - [] Add full name method for users

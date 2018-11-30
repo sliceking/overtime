@@ -1,28 +1,39 @@
 <div class="logo">
     <h1>Time Tracker</h1>
 </div>
-<ul class="custom-nav nav nav-tabs">
-    <li class="nav-item <%= active?(root_path) %>">
-        <%= link_to "Home", root_path %>
-    </li>
-    <li class="nav-item <%= active?(posts_path) %>">
-        <%= link_to "Time Entries", posts_path %>
-    </li>
-    <li class="nav-item <%= active?(new_post_path) %>">
-        <%= link_to "Add New Entry", new_post_path, id: 'new_post_from_nav' %>
-    </li>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-            <li>
-                <%= link_to "TODO: Admin Dashboard", root_path %>
-            </li>
-            <div class="divider"></div>
-            <li>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-            </li>
-            </ul>
+
+<!--TODO -->
+<% if current_user %>
+    <ul class="custom-nav nav nav-tabs">
+        <li class="nav-item <%= active?(root_path) %>">
+            <%= link_to "Home", root_path %>
         </li>
+        <li class="nav-item <%= active?(posts_path) %>">
+            <%= link_to "Time Entries", posts_path %>
+        </li>
+        <li class="nav-item <%= active?(new_post_path) %>">
+            <%= link_to "Add New Entry", new_post_path, id: 'new_post_from_nav' %>
+        </li>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+
+                <!--TODO -->
+                <% if current_user.try(:type) == "AdminUser" %>
+                <li>
+                    <%= link_to "Admin Dashboard", admin_root_path %>
+                </li>
+                <div class="divider"></div>
+                <% end %>
+                <!--TODO -->
+
+                <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                </li>
+                </ul>
+            </li>
+        </ul>
     </ul>
-</ul>
+<% end %>
+<!--TODO -->

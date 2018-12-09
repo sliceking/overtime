@@ -28,3 +28,4 @@
 - [x] Refactor user association in integration test in post_spec
 - [] Add full name method for users
 - [] Refactpr posts/\_form form admin user with status
+- [] Fix post_spec.rb:82 to user factories

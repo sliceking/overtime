@@ -3,7 +3,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def new
@@ -23,9 +23,13 @@ class PostsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    authorize @post
+  end
 
   def update
+    authorize @post
+
     if @post.update(post_params)
       redirect_to @post, notice: 'Your post was edited successfully'
     else

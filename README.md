@@ -29,3 +29,4 @@
 - [] Add full name method for users
 - [] Refactpr posts/\_form form admin user with status
 - [] Fix post_spec.rb:82 to user factories
+- [] Fix post_spec.rb:52 to have correct user reference and not require update
